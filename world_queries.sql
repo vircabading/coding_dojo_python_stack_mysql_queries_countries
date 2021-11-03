@@ -53,3 +53,15 @@ WHERE countries.government_form = 'Constitutional Monarchy'
 AND countries.capital > 200
 AND countries.life_expectancy > 75
 GROUP BY countries.name;
+
+-- 7.    get all the cities of Argentina inside the Buenos Aires district
+--           and have the population greater than 500,000
+
+SELECT countries.name, cities.name, cities.district, cities.population
+FROM countries
+JOIN cities ON countries.id = cities.country_id
+WHERE countries.name = 'Argentina'
+AND cities.district = 'Buenos Aires'
+AND cities.population > 500000;
+
+-- 8.   
