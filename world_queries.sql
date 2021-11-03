@@ -28,3 +28,11 @@ SELECT cities.name, countries.name, cities.population FROM countries
 JOIN cities ON countries.id = cities.country_id
 WHERE countries.name = 'Mexico' AND cities.population > 500000
 ORDER BY cities.population DESC;
+
+-- 4.   get all languages in each country with a percentage greater than 89%
+--          arrange the result by percentage in descending order
+
+SELECT countries.name, languages.language, languages.percentage FROM countries
+JOIN languages ON countries.id = languages.country_id
+WHERE languages.percentage > 89
+ORDER BY languages.percentage DESC;
