@@ -64,4 +64,11 @@ WHERE countries.name = 'Argentina'
 AND cities.district = 'Buenos Aires'
 AND cities.population > 500000;
 
--- 8.   
+-- 8.   summarize the number of countries in each region
+--          display the name of the region and the number of countries
+--          arrange the result by the number of countries in descending order
+
+SELECT countries.region, COUNT(*)
+FROM countries
+GROUP BY countries.region
+ORDER BY COUNT(*) DESC;
