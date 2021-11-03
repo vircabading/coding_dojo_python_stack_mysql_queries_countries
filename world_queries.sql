@@ -42,3 +42,14 @@ ORDER BY languages.percentage DESC;
 
 SELECT countries.name, countries.surface_area, countries.population FROM COUNTRIES
 WHERE countries.surface_area < 501 and countries.population > 100000;
+
+-- 6.    get countries with only Constitutional Monarchy
+--          with a capital greater than 200
+--          and a life expectancy greater than 75 years
+
+SELECT countries.name, countries.government_form, countries.capital, 
+countries.life_expectancy from countries
+WHERE countries.government_form = 'Constitutional Monarchy' 
+AND countries.capital > 200
+AND countries.life_expectancy > 75
+GROUP BY countries.name;
