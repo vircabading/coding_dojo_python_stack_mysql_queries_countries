@@ -20,3 +20,11 @@ SELECT countries.name, COUNT(*) FROM countries
 JOIN cities ON countries.id = cities.country_id
 GROUP BY countries.id
 ORDER BY COUNT(*) DESC;
+
+-- 3.   get all the cities in Mexico with a population of greater than 500,000
+--           arrange the result by population in descending order
+
+SELECT cities.name, countries.name, cities.population FROM countries
+JOIN cities ON countries.id = cities.country_id
+WHERE countries.name = 'Mexico' AND cities.population > 500000
+ORDER BY cities.population DESC;
