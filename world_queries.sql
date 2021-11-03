@@ -36,3 +36,9 @@ SELECT countries.name, languages.language, languages.percentage FROM countries
 JOIN languages ON countries.id = languages.country_id
 WHERE languages.percentage > 89
 ORDER BY languages.percentage DESC;
+
+-- 5.   get all the countries with Surface Area below 501 
+--          get all the countries with Surface Area below 501 
+
+SELECT countries.name, countries.surface_area, countries.population FROM COUNTRIES
+WHERE countries.surface_area < 501 and countries.population > 100000;
